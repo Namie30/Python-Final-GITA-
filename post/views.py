@@ -54,17 +54,17 @@ def role_page(request):
     # If the user is a job seeker, load job listings
     if role == "Job Seeker":
         jobs = Job.objects.all()
-        context["jobs"] = jobs  # Pass jobs to the template
+        context["jobs"] = jobs 
 
     return render(request, "role.html", context)
 
 
 def dashboard(request):
-    role = request.GET.get('role', 'Job Seeker')  # Get role from request (optional)
-    jobs = Job.objects.all()  # Query all jobs from the database
+    role = request.GET.get('role', 'Job Seeker')  
+    jobs = Job.objects.all()  
 
     context = {
         'role': role,
-        'jobs': jobs  # Pass jobs to template
+        'jobs': jobs  
     }
     return render(request, 'dashboard.html', context)

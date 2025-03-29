@@ -1,7 +1,5 @@
 from django.db import models
 
-
-# Create your models here.
 class Job(models.Model):
     WORK_TYPES = [
         ('Remote', 'Remote'),
